@@ -1,0 +1,3 @@
+git add * (добавление файлов)
+git commit -a -m "commentary" (сохранить изменения)
+git push origin master (отправить эти изменения)
