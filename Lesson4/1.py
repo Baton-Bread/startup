@@ -44,7 +44,7 @@ def calc():
 
 lol = input("Какую программу хотите использовать?(Введите: 'Калькулятор' или 'Конвертер': ")
 if lol == "Калькулятор":
-    print(calc())
+    calc()
 elif lol == "Конвертер":
     charcode = str(input("Введите CharCode: "))
     how_much = int(input("Сколько вам нужно валюты?: "))
