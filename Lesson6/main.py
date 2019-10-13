@@ -9,7 +9,7 @@ window = tkinter.Tk()
 window.title("minecraft")
 window.geometry("600x500")
 
-label = tkinter.Label(text="100000", fg="black", bg ="white", font="Arial 22")
+label = tkinter.Label(text="0", fg="black", bg ="white", font="Arial 22")
 label.place(x=25, y=25)
 
 def random_color():                       #функция рандомности цветов
@@ -19,7 +19,7 @@ def random_color():                       #функция рандомности
 def count():
     random_color()
     num = int(label["text"])
-    num = num + 30000
+    num = num + 1
     label["text"] = str(num)
 
 button = tkinter.Button(text="Нажми Плз :3", command = count)
