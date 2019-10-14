@@ -22,7 +22,13 @@ def count():
     num = num + 1
     label["text"] = str(num)
 
-button = tkinter.Button(text="Нажми Плз :3", command = count)
+def final():
+    random_color()
+    count()
+    text = ["Жми еще", "Сильнее жми!", "Кнопку не сломай", "Быстрее!"]
+    button["text"] = random.choice(text)
+
+button = tkinter.Button(text="Нажми Плз :3", command = final)
 button.place(x=25, y=300)
 
 #label["text"] = "КРОТ" - обращение к тексту в переменной label
