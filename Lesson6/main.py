@@ -27,9 +27,13 @@ def final():
     count()
     text = ["Жми еще", "Сильнее жми!", "Кнопку не сломай", "Быстрее!"]
     button["text"] = random.choice(text)
+    start = 0 
+    xyr = random.randrange(start, stop=600, step=1, _int=int)
+    yxr = random.randrange(start, stop=500, step=1, _int=int)
+    button.place(x=xyr, y=yxr)
 
 button = tkinter.Button(text="Нажми Плз :3", command = final)
-button.place(x=25, y=300)
+button.place(x=25, y=90)
 
 #label["text"] = "КРОТ" - обращение к тексту в переменной label
 #label["bg"] = "color" - обращение к цвету label - бэкргаунда текста
