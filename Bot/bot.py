@@ -27,8 +27,6 @@ def main():
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message=response)
             elif message == "покекать":
                 memes = ["photo-147286578_457450491", "photo-147286578_457450484", "photo-147286578_457450483"]
-                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), attachment=random.choice(memes))
-            else:
-                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Хуйню несешь блять!")                    
+                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), attachment=random.choice(memes))                
 
 main()
