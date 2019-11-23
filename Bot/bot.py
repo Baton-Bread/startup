@@ -30,6 +30,7 @@ def main():
                 response = get_news()
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message=response)
             else:
-                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Введи правильную комманду :3")                    
+                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Введи правильную комманду :3")                             
+
 
 main()
