@@ -29,8 +29,26 @@ def main():
             elif message == "новости":
                 response = get_news()
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message=response)
+            elif "игра" in message:
+                game_list = {
+                    "csgo": "Стрелялки",
+                    "dota": "моба игра",
+                    "total var": "стратегия"
+                }
+                game = message.split(" ")[-1]
+                value = game_list.get(game)
+                if value is None:
+                    msg = "я не знаю такой игры"
+                else:
+                    msg = value
+                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message=msg)
             else:
+<<<<<<< Updated upstream
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Введи правильную комманду :3")                             
+=======
+                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Введи правильную комманду :3")
+                                
+>>>>>>> Stashed changes
 
 
 main()
