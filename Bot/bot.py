@@ -43,12 +43,10 @@ def main():
                     msg = value
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message=msg)
             else:
-<<<<<<< Updated upstream
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Введи правильную комманду :3")                             
-=======
-                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Введи правильную комманду :3")
+
                                 
->>>>>>> Stashed changes
+
 
 
 main()

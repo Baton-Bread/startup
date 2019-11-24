@@ -50,9 +50,12 @@ def main():
             elif message == "комманды" or message == "что ты умеешь":
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message=skills)
             elif message == "переводчик":
+                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Я в режиме переводчика. Вводи все, что нужно перевести на русский.")
                 for event in longpoll.listen():
                     if event.type == VkEventType.MESSAGE_NEW and event.to_me:
                         message = event.message.lower()
+
+                        
 
                         if message == "выход":
                             vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="Режим 'Англичанина' выключен")
@@ -63,7 +66,7 @@ def main():
                         typing = event.text
                         url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' 
                         key = 'trnsl.1.1.20191123T081608Z.8ec51c73a4267699.76671010e98e75c6e422a9e9b3ac595b3b6b657d' 
-                        lang = 'en-ru','ru-en' 
+                        lang = 'ru-en','en-ru' 
                         r = requests.post(url, data={'key': key, 'text': typing, 'lang': lang}) 
                         good_text = json.loads(r.text)['text'][0]
 
