@@ -8,15 +8,14 @@ import requests
 import json
 from modules.weather import temp
 from modules.weather import status
-from bs4 import BeautifulSoup
+import bs4
+from genre import genres
 
 
 def main():
-    TOKEN = "55bd7986c04195010a138b05fdebb0c5802c0a9ef3f3cf4c5c6b7737612dc01964b9a203b41ba24fbba89"
+    TOKEN = "d82dafe2621d5dbc1444fbcb1b2d04e7da6d63ec28feabe61d3f5f8d99ffa2f44269e7b186f8ce8dd48bc"
 
     vk_session = vk_api.VkApi(token=TOKEN)
-
-
 
     vk = vk_session.get_api()
 
@@ -76,11 +75,12 @@ def main():
             elif message == "погода":
                 url_1 = 'https://yandex.ru/pogoda/novosibirsk'
                 response = requests.get(url_1)
-                html = BeautifulSoup(response.content, 'lxml')
+                html = bs4.BeautifulSoup(response.content, 'lxml')
                 grade = temp(html)
                 stat = status(html)
                 vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="В новосибирске " + grade + " градусов")
-                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="На улице: " + stat)            
+                vk.messages.send(user_id=event.user_id, random_id=get_random_id(), message="На улице: " + stat)
+
 
 
 

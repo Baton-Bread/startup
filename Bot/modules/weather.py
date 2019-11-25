@@ -1,8 +1,6 @@
 import requests #Активировать библиотеку requests
 from bs4 import BeautifulSoup #Подключить инструмент из библиотеки
 
-
-
 def temp(html):
     return html.find('span', {'class': 'temp__value'}).text 
 def status(html):
